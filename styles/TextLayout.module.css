@@ -1,0 +1,21 @@
+.header {
+  display: flex;
+  justify-content: center;
+  font-size: 52px;
+  font-weight: 200;
+  margin: 42px 0;
+}
+.wrapper > .text {
+  font-size: 18px;
+  font-weight: 200;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+  word-spacing: 5px;
+  margin-bottom: 32px;
+}
+.wrapper > .text:first-child:first-letter {
+  font-size: 28px;
+}
+.wrapper > .text:first-letter {
+  margin-left: 80px;
+}
