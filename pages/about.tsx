@@ -1,7 +1,14 @@
+import Helmet from "../components/Helmet";
 import TextLayout, { ITextLayout } from '../components/TextLayout';
 
 export default (props: ITextLayout) => {
-  return <TextLayout {...props} />;
+  return (
+    <>
+      <Helmet title="About" />
+
+      <TextLayout {...props} />
+    </>
+  );
 }
 
 export async function getStaticProps(_context: any) {
