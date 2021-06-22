@@ -1,5 +1,5 @@
-import Helmet from "../components/Helmet";
-import TextLayout, { ITextLayout } from "../components/TextLayout";
+import Helmet from "../src/Helmet";
+import TextLayout, { ITextLayout } from "../src/TextLayout";
 
 export default (props: ITextLayout) => {
   return (

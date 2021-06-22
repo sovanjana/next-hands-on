@@ -10,31 +10,17 @@
   padding: 0 16px;
   display: flex;
   justify-content: space-between;
-  background: crimson;
+  background: crimson !important;
   box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
     0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
 }
-.layout > .topbar > .brandWrapper {
-  display: flex;
-  align-items: center;
-  margin: 4px 0;
-  padding: 0 12px;
-  cursor: pointer;
-}
-.layout > .topbar > .brandWrapper > .brand {
+.layout > .topbar > .brand {
   font-size: 40px;
   font-weight: 100;
   color: #fff;
 }
-.layout > .topbar > .nav {
+.layout > .topbar .nav > .navitem > a {
   display: flex;
-  align-items: center;
-}
-.layout > .topbar > .nav > .navitem {
-  list-style: none;
-  display: flex;
-}
-.layout > .topbar > .nav > .navitem > a {
   height: 100%;
   line-height: 70px;
   padding: 0 16px;
@@ -46,7 +32,7 @@
   cursor: pointer;
   transition: all 200ms ease-in-out;
 }
-.layout > .topbar > .nav > .navitem > a::after {
+.layout > .topbar .nav > .navitem > a::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -56,15 +42,18 @@
   background: white;
   transition: height 200ms ease-in-out;
 }
-.layout > .topbar > .nav > .navitem.active > a::after,
-.layout > .topbar > .nav > .navitem > a:hover::after {
+.layout > .topbar .nav > .navitem.active > a::after,
+.layout > .topbar .nav > .navitem > a:hover::after {
   height: 4px;
+}
+@media (min-width: 768px) {
+  .layout > .topbar > .collapse {
+    justify-content: flex-end;
+  }
 }
 .layout > .content {
   padding-top: 70px;
   min-height: calc(100vh - 100px);
-  width: 1080px;
-  margin: auto;
 }
 .layout > .footer {
   background: #dc163c;
@@ -75,7 +64,7 @@
 }
 .layout > .footer > .nav {
   display: flex;
-  margin: 12px 0;
+  margin: 6px 0;
 }
 .layout > .footer > .nav > a {
   padding: 16px;
@@ -94,4 +83,5 @@
   background: #b41132;
   width: 100%;
   text-align: center;
+  margin: unset;
 }

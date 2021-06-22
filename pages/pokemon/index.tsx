@@ -1,40 +1,40 @@
 import { useRouter } from "next/router";
-import Layout from "../../components/layout";
-
+import UserLayout from "../../src/UserLayout";
 import styles from "../../styles/Pokemon.module.css";
 
 interface IPokemonSkeleton {
   name: string;
   url: string;
 }
-
 interface IPokemon {
   data: Array<IPokemonSkeleton>;
 }
 
-export default (props: IPokemon) => {
+export default function Pokemon(props: IPokemon) {
   const router = useRouter();
 
   return (
-    <Layout>
-      <div className={styles.pokemons}>
-        <div className={styles.list}>
-          {props?.data?.map((pokemon: IPokemonSkeleton, idx: number) => (
-            <div
-              key={idx}
-              className={styles.card}
-              onClick={() =>
-                router.push(`${router?.asPath}/${pokemon?.name}`)
-              }
-            >
-              <span>{pokemon?.name}</span>
-            </div>
-          ))}
-        </div>
+    <div className={styles.pokemons}>
+      <div className={styles.list}>
+        {props?.data?.map((pokemon: IPokemonSkeleton, idx: number) => (
+          <div
+            key={idx}
+            className={styles.card}
+            onClick={() =>
+              router.push(`${router?.asPath}/${pokemon?.name}`)
+            }
+          >
+            <span>{pokemon?.name}</span>
+          </div>
+        ))}
       </div>
-    </Layout>
+    </div>
   );
 };
+
+// Pokemon.Layout = ListLayout;
+
+
 
 export async function getStaticProps(_context: any) {
   const base_path = "https://pokeapi.co/api/v2";

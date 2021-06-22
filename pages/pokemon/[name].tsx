@@ -1,13 +1,16 @@
 // import { useRouter } from "next/router";
-import Layout from "../../components/layout";
+// import Layout from "../../components/layout";
 
-export default ({ data }: any) => {
+export default (props: any) => {
   // const router = useRouter();
+  // console.log({props});
+  
+  const { data } = props;
 
   return (
-    <Layout>
+    // <Layout>
       <h1>{data?.name}</h1>
-    </Layout>
+    // </Layout>
   );
 };
 
@@ -20,7 +23,7 @@ export async function getStaticPaths() {
     params: { name: pokemon.name },
   }));
 
-  return { paths, fallback: false };
+  return { paths, fallback: true };
 }
 
 export async function getStaticProps({ params }: any) {

@@ -1,6 +1,5 @@
 import Link from "next/link";
-import Layout from "../components/layout";
-import Helmet from "../components/Helmet";
+import Helmet from "../src/Helmet";
 
 import styles from "../styles/Home.module.css";
 
@@ -9,14 +8,15 @@ export default function Home() {
     <>
       <Helmet title="Home" />
 
-      <Layout>
-        <div className={styles.container}>
-          <div className={styles.title}>
-            <span>Pokemon Family</span>
-          </div>
-          <Link href="/pokemon">Explore</Link>
+      <div className={styles.container}>
+        <div className={styles.title}>
+          <span>Hands on - Next.js</span>
         </div>
-      </Layout>
+        <div className={styles.links}>
+          <Link href="/pokemon">Pokemons</Link>
+          <Link href="/users">Users</Link>
+        </div>
+      </div>
     </>
   );
 }

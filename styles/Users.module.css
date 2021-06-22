@@ -1,0 +1,69 @@
+.usersList {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.usersList > .card {
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 8px;
+  cursor: pointer;
+  box-shadow: 0px 3px 3px -2px rgba(0, 0, 0, 0.2),
+    0px 3px 4px 0px rgba(0, 0, 0, 0.14), 0px 1px 8px 0px rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  transition: box-shadow 240ms ease-in-out,
+    background 240ms ease-in-out, color 240ms ease-in-out;
+}
+.usersList > .card:hover {
+  background: crimson;
+  color: white;
+  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
+    0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+}
+.usersList > .card > span {
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  font-size: 18px;
+  font-weight: 200;
+}
+.usersList > .card > span::first-letter {
+  font-size: 24px;
+}
+.usersList > .card .noData {}
+.usersList > .card .noData > .loader {}
+
+@keyframes spin {
+  to { -webkit-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+  to { -webkit-transform: rotate(360deg); }
+}
+
+/* User */
+.user {
+
+}
+.user > .title {
+  position: relative;
+  font-size: 42px;
+  font-weight: 200;
+  margin: 42px 0;
+  text-align: center;
+  text-transform: capitalize;
+  letter-spacing: 2px;
+}
+.user > .title::first-letter {
+  font-size: 72px;
+}
+.user > .title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 50%;
+  height: 2px;
+  background: #212629;
+  transform: translate(-50%, 16px);
+}
+
