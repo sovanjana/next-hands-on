@@ -1,2 +1,2 @@
 # next-hands-on
-- very firs with next
+- very first with next.js
